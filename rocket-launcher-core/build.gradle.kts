@@ -17,12 +17,14 @@ buildscript {
  * repositories
  */
 repositories {
+    maven { setUrl("https://funczz.github.io/kotlin-fsm") }
 }
 
 /**
  * dependencies
  */
 dependencies {
+    api("com.github.funczz:fsm:0.1.0")
 }
 
 /**
