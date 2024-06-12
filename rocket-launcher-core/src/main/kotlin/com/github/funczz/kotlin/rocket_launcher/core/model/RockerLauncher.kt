@@ -1,16 +1,15 @@
 package com.github.funczz.kotlin.rocket_launcher.core.model
 
+import com.github.funczz.kotlin.rocket_launcher.core.state.Ready
+import com.github.funczz.kotlin.rocket_launcher.core.state.RocketLauncherState
+
 data class RockerLauncher(
 
     var initialCounter: Int = DEFAULT_COUNTER,
 
     var currentCounter: Int = initialCounter,
 
-    var isStarted: Boolean = false,
-
-    var isLaunched: Boolean = false,
-
-    var isAborted: Boolean = false,
+    var state: RocketLauncherState = Ready,
 
     var isTransitioned: Boolean = false,
 

@@ -14,7 +14,7 @@ class LaunchedTest : Cases {
         Triple(
             Pair(Ready, RockerLauncher(isTransitioned = true)),
             Initialize,
-            RockerLauncher(currentCounter = 0, isStarted = true, isLaunched = true, isTransitioned = true)
+            RockerLauncher(currentCounter = 0, state = Launched, isTransitioned = true)
         ),
     ) { (expected, event, context) ->
         val actual = state.fire(event = event, context = context)

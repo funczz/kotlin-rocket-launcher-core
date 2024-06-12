@@ -14,7 +14,7 @@ class AbortedTest : Cases {
         Triple(
             Pair(Ready, RockerLauncher(isTransitioned = true)),
             Initialize,
-            RockerLauncher(isStarted = true)
+            RockerLauncher(state = Aborted)
         ),
     ) { (expected, event, context) ->
         val actual = state.fire(event = event, context = context)

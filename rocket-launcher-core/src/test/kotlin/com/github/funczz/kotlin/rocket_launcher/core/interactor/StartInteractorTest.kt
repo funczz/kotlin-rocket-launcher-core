@@ -2,6 +2,7 @@ package com.github.funczz.kotlin.rocket_launcher.core.interactor
 
 import com.github.funczz.kotlin.junit5.Cases
 import com.github.funczz.kotlin.rocket_launcher.core.model.RockerLauncher
+import com.github.funczz.kotlin.rocket_launcher.core.state.Counting
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.TestFactory
@@ -11,7 +12,7 @@ class StartInteractorTest : Cases {
     @TestFactory
     fun success() = casesDynamicTest(
         Pair(
-            RockerLauncher(isStarted = true, isTransitioned = true),
+            RockerLauncher(state = Counting, isTransitioned = true),
             RockerLauncher()
         ),
     ) { (expected, actual) ->
@@ -27,7 +28,7 @@ class StartInteractorTest : Cases {
         ),
         Pair(
             IllegalArgumentException::class.java,
-            RockerLauncher(isStarted = true),
+            RockerLauncher(state = Counting),
         ),
     ) { (expected, data) ->
         assertThrows(expected) {

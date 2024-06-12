@@ -1,6 +1,8 @@
 package com.github.funczz.kotlin.rocket_launcher.core.interactor
 
 import com.github.funczz.kotlin.rocket_launcher.core.model.RockerLauncher
+import com.github.funczz.kotlin.rocket_launcher.core.state.Counting
+import com.github.funczz.kotlin.rocket_launcher.core.state.Launched
 import com.github.funczz.kotlin.rocket_launcher.core.usecase.LaunchUseCase
 
 object LaunchInteractor : LaunchUseCase {
@@ -8,7 +10,7 @@ object LaunchInteractor : LaunchUseCase {
     override fun invoke(data: RockerLauncher) {
         require(data = data)
         data.apply {
-            isLaunched = true
+            state = Launched
             isTransitioned = true
         }
     }
@@ -17,9 +19,7 @@ object LaunchInteractor : LaunchUseCase {
         val result = mutableListOf<String>()
         if (data.initialCounter < 0) result.add("initialCounter < 0")
         if (data.currentCounter != 0) result.add("currentCounter != 0")
-        if (!data.isStarted) result.add("isStarted is false")
-        if (data.isLaunched) result.add("isLaunched is true")
-        if (data.isAborted) result.add("isLaunched is true")
+        if (data.state !is Counting) result.add("state is ${data.state::class.simpleName}")
         if (result.isNotEmpty()) {
             val message = "%s(%s)".format("RockerLauncher", result.joinToString(", "))
             throw IllegalArgumentException(message)

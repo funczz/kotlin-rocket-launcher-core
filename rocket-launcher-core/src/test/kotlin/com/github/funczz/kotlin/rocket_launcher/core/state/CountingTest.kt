@@ -12,25 +12,25 @@ class CountingTest : Cases {
     @TestFactory
     fun success() = casesDynamicTest(
         Triple(
-            Pair(Counting, RockerLauncher(currentCounter = 9, isStarted = true, isTransitioned = false)),
+            Pair(Counting, RockerLauncher(currentCounter = 9, state = Counting, isTransitioned = false)),
             Decrement,
-            RockerLauncher(isStarted = true)
+            RockerLauncher(state = Counting)
         ),
         Triple(
             Pair(
                 Launched,
-                RockerLauncher(currentCounter = 0, isStarted = true, isLaunched = true, isTransitioned = true)
+                RockerLauncher(currentCounter = 0, state = Launched, isTransitioned = true)
             ),
             Launch,
-            RockerLauncher(currentCounter = 0, isStarted = true)
+            RockerLauncher(currentCounter = 0, state = Counting)
         ),
         Triple(
             Pair(
                 Aborted,
-                RockerLauncher(currentCounter = 7, isStarted = true, isAborted = true, isTransitioned = true)
+                RockerLauncher(currentCounter = 7, state = Aborted, isTransitioned = true)
             ),
             Abort,
-            RockerLauncher(currentCounter = 7, isStarted = true)
+            RockerLauncher(currentCounter = 7, state = Counting)
         ),
     ) { (expected, event, context) ->
         val actual = state.fire(event = event, context = context)

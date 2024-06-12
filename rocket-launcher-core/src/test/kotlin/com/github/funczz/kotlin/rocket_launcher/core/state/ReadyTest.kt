@@ -14,7 +14,7 @@ class ReadyTest : Cases {
         Triple(
             Pair(
                 Counting,
-                RockerLauncher(initialCounter = 3, currentCounter = 3, isStarted = true, isTransitioned = true)
+                RockerLauncher(initialCounter = 3, currentCounter = 3, state = Counting, isTransitioned = true)
             ),
             Start(3),
             RockerLauncher()
