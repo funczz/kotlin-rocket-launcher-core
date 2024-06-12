@@ -18,6 +18,7 @@ buildscript {
  */
 repositories {
     maven { setUrl("https://funczz.github.io/kotlin-fsm") }
+    maven { setUrl("https://funczz.github.io/kotlin-sam") }
 }
 
 /**
@@ -25,6 +26,7 @@ repositories {
  */
 dependencies {
     api("com.github.funczz:fsm:0.1.0")
+    api("com.github.funczz:sam:0.2.0")
 }
 
 /**
