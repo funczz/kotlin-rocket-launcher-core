@@ -1,7 +1,7 @@
 package com.github.funczz.kotlin.rocket_launcher.core.interactor
 
 import com.github.funczz.kotlin.junit5.Cases
-import com.github.funczz.kotlin.rocket_launcher.core.model.RockerLauncher
+import com.github.funczz.kotlin.rocket_launcher.core.model.RocketLauncher
 import com.github.funczz.kotlin.rocket_launcher.core.state.Counting
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertThrows
@@ -12,7 +12,7 @@ class DecrementInteractorTest : Cases {
     @TestFactory
     fun success() = casesDynamicTest(
         Pair(
-            RockerLauncher(currentCounter = 9, state = Counting), RockerLauncher(state = Counting)
+            RocketLauncher(currentCounter = 9, state = Counting), RocketLauncher(state = Counting)
         ),
     ) { (expected, actual) ->
         interactor.invoke(actual)
@@ -23,7 +23,7 @@ class DecrementInteractorTest : Cases {
     fun failure() = casesDynamicTest(
         Pair(
             IllegalArgumentException::class.java,
-            RockerLauncher(),
+            RocketLauncher(),
         ),
     ) { (expected, data) ->
         assertThrows(expected) {

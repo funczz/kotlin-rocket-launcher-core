@@ -1,7 +1,7 @@
 package com.github.funczz.kotlin.rocket_launcher.core.sam
 
 import com.github.funczz.kotlin.junit5.Cases
-import com.github.funczz.kotlin.rocket_launcher.core.model.RockerLauncher
+import com.github.funczz.kotlin.rocket_launcher.core.model.RocketLauncher
 import com.github.funczz.kotlin.rocket_launcher.core.state.Aborted
 import com.github.funczz.kotlin.rocket_launcher.core.state.Counting
 import com.github.funczz.kotlin.rocket_launcher.core.state.Launched
@@ -22,7 +22,7 @@ class RocketLauncherSamModelTest : Cases {
                 isAborted = false,
                 isTransitioned = false
             ),
-            RockerLauncher(),
+            RocketLauncher(),
         ),
         Triple(
             "RocketLauncher: Counting state",
@@ -34,7 +34,7 @@ class RocketLauncherSamModelTest : Cases {
                 isAborted = false,
                 isTransitioned = false
             ),
-            RockerLauncher(state = Counting),
+            RocketLauncher(state = Counting),
         ),
         Triple(
             "RocketLauncher: Launched state",
@@ -46,7 +46,7 @@ class RocketLauncherSamModelTest : Cases {
                 isAborted = false,
                 isTransitioned = false
             ),
-            RockerLauncher(initialCounter = 0, currentCounter = 0, state = Launched),
+            RocketLauncher(initialCounter = 0, currentCounter = 0, state = Launched),
         ),
         Triple(
             "RocketLauncher: Aborted state",
@@ -58,7 +58,7 @@ class RocketLauncherSamModelTest : Cases {
                 isAborted = true,
                 isTransitioned = false
             ),
-            RockerLauncher(state = Aborted),
+            RocketLauncher(state = Aborted),
         ),
     ) { (_, expected, data) ->
         val samModel = RocketLauncherSamModel().apply {

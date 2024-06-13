@@ -1,6 +1,6 @@
 package com.github.funczz.kotlin.rocket_launcher.core.interactor
 
-import com.github.funczz.kotlin.rocket_launcher.core.model.RockerLauncher
+import com.github.funczz.kotlin.rocket_launcher.core.model.RocketLauncher
 import com.github.funczz.kotlin.rocket_launcher.core.state.Aborted
 import com.github.funczz.kotlin.rocket_launcher.core.state.Launched
 import com.github.funczz.kotlin.rocket_launcher.core.state.Ready
@@ -8,7 +8,7 @@ import com.github.funczz.kotlin.rocket_launcher.core.usecase.AbortUseCase
 
 object AbortInteractor : AbortUseCase {
 
-    override fun invoke(data: RockerLauncher) {
+    override fun invoke(data: RocketLauncher) {
         require(data = data)
         data.apply {
             state = Aborted
@@ -16,7 +16,7 @@ object AbortInteractor : AbortUseCase {
         }
     }
 
-    private fun require(data: RockerLauncher) {
+    private fun require(data: RocketLauncher) {
         val result = mutableListOf<String>()
         when (data.state) {
             is Ready, is Launched, is Aborted -> {

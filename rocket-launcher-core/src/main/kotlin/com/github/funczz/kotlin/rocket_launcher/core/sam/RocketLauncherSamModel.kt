@@ -1,13 +1,13 @@
 package com.github.funczz.kotlin.rocket_launcher.core.sam
 
-import com.github.funczz.kotlin.rocket_launcher.core.model.RockerLauncher
+import com.github.funczz.kotlin.rocket_launcher.core.model.RocketLauncher
 import com.github.funczz.kotlin.rocket_launcher.core.state.Aborted
 import com.github.funczz.kotlin.rocket_launcher.core.state.Counting
 import com.github.funczz.kotlin.rocket_launcher.core.state.Launched
 import com.github.funczz.kotlin.rocket_launcher.core.state.Ready
 import com.github.funczz.kotlin.sam.SamModel
 
-class RocketLauncherSamModel : SamModel<RockerLauncher> {
+class RocketLauncherSamModel : SamModel<RocketLauncher> {
 
     /** 初期カウント値 */
     @Suppress("MemberVisibilityCanBePrivate")
@@ -39,7 +39,7 @@ class RocketLauncherSamModel : SamModel<RockerLauncher> {
     var isTransitioned: Boolean = false
         private set
 
-    override fun present(data: RockerLauncher) {
+    override fun present(data: RocketLauncher) {
         /** イベント値をモデルに適用 */
         initialCounter = data.initialCounter
         currentCounter = data.currentCounter
