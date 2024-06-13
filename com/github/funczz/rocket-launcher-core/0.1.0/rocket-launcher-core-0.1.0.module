@@ -1,0 +1,103 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.github.funczz",
+    "module": "rocket-launcher-core",
+    "version": "0.1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.1.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.github.funczz",
+          "module": "fsm",
+          "version": {
+            "requires": "0.1.0"
+          }
+        },
+        {
+          "group": "com.github.funczz",
+          "module": "sam",
+          "version": {
+            "requires": "0.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "rocket-launcher-core-0.1.0.jar",
+          "url": "rocket-launcher-core-0.1.0.jar",
+          "size": 41277,
+          "sha512": "32eaf63afa1ecd1cb51f2588ddfc6f7d6cdf389a94899ea06d8694512a49514f46a5907c1dc88890c0cbdeebf2d11e4b0c863c708f87bad33eef4ff3a7ec2565",
+          "sha256": "1b2283545c1566ce2d7ad2662a2a312efc7ddd3ad881013bb13b7651be5ac84e",
+          "sha1": "b73532ba78bc8845252e8ab956b091fa24520c55",
+          "md5": "8263a57df65f558641fe8090595e1278"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.7.10"
+          }
+        },
+        {
+          "group": "com.github.funczz",
+          "module": "fsm",
+          "version": {
+            "requires": "0.1.0"
+          }
+        },
+        {
+          "group": "com.github.funczz",
+          "module": "sam",
+          "version": {
+            "requires": "0.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "rocket-launcher-core-0.1.0.jar",
+          "url": "rocket-launcher-core-0.1.0.jar",
+          "size": 41277,
+          "sha512": "32eaf63afa1ecd1cb51f2588ddfc6f7d6cdf389a94899ea06d8694512a49514f46a5907c1dc88890c0cbdeebf2d11e4b0c863c708f87bad33eef4ff3a7ec2565",
+          "sha256": "1b2283545c1566ce2d7ad2662a2a312efc7ddd3ad881013bb13b7651be5ac84e",
+          "sha1": "b73532ba78bc8845252e8ab956b091fa24520c55",
+          "md5": "8263a57df65f558641fe8090595e1278"
+        }
+      ]
+    }
+  ]
+}
