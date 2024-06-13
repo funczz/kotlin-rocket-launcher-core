@@ -6,7 +6,7 @@ on:
     tags: [v*]
 
 env:
-  SUB_PROJECT_DIR: rocket-launcher
+  SUB_PROJECT_DIR: rocket-launcher-core
 
 jobs:
   release:
