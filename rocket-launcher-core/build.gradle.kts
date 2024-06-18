@@ -40,10 +40,10 @@ publishing {
     repositories {
         maven {
             url = uri(
-                    PublishMavenRepository.url(
-                            version = version.toString(),
-                            baseUrl = "$buildDir/mvn-repos"
-                    )
+                PublishMavenRepository.url(
+                    version = version.toString(),
+                    baseUrl = "$buildDir/mvn-repos"
+                )
             )
         }
     }
